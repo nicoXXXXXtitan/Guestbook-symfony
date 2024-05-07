@@ -25,10 +25,10 @@ class ConferenceController extends AbstractController
     {
         return new Response($twig->render('conference/show.html.twig', [
             'conference'  => $conference,
-            'comments'   => $commentRepository->findBy([
-                'conference' => $conference,
-                'createdAt' => 'DESC'
-                ])
+            'comments'   => $commentRepository->findBy(
+                    ['conference' => $conference],
+                    ['createdAt' => 'DESC']
+                )
         ]));
     }
 }
