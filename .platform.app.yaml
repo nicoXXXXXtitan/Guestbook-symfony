@@ -17,6 +17,8 @@ runtime:
         - xsl
         - pdo_pgsql
         
+relationships:
+    database: "database:postgresql"
 
 variables:
     php:
